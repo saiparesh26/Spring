@@ -1,4 +1,4 @@
-package com.sp.web;
+package com.sp.demo.web;
 
 public class Product {
 	private int id;
