@@ -23,11 +23,11 @@ public class EmployeeController {
 		Employee aEmployee = new Employee();
 		
 		model.addAttribute("employee", aEmployee);
-		return "new-employee";
+		return "employees/new-employee";
 	}
 	
 	@PostMapping("/save")
-	public String createEmployee(Employee employee, Model model) {
+	public String createEmployee(Employee employee) {
 		//Save the employee into database
 		empRepo.save(employee);
 		

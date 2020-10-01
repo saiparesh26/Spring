@@ -19,11 +19,11 @@ public class ProjectController {
 	@RequestMapping("/new")
 	public String displayProjectForm (Model model) {
 		model.addAttribute("project", new Project() );
-		return "new-project";
+		return "projects/new-project";
 	}
 	
 	@PostMapping("/save")
-	public String createProject(Project project, Model model) {
+	public String createProject(Project project) {
 		// This method should handle saving into the database
 		proRepo.save(project);
 		
