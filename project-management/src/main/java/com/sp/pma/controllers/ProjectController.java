@@ -47,12 +47,6 @@ public class ProjectController {
 		// This method should handle saving into the database
 		proRepo.save(project);
 		
-		Iterable<Employee> chosenEmployees =  empRepo.findAllById(employees);
-		
-		for(Employee emp : chosenEmployees) {
-			emp.setProject(project);
-			empRepo.save(emp);
-		}
 		
 		//use a redirect to prevent duplicate submission
 		return "redirect:/projects/new";
