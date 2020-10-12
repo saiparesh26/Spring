@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.sp.pma.dao.EmployeeRepository;
 import com.sp.pma.dao.ProjectRepository;
+import com.sp.pma.dto.EmployeeProject;
 import com.sp.pma.entities.Employee;
 import com.sp.pma.entities.Project;
 
@@ -28,8 +29,8 @@ public class HomeController {
 		model.addAttribute("projects", projects);
 
 		// We are querying the database for employees
-		List<Employee> employees =  empRepo.findAll();		
-		model.addAttribute("employees", employees);
+		List<EmployeeProject> employeesProjectCount =  empRepo.employeeProjects();		
+		model.addAttribute("employeesListProjectCount", employeesProjectCount);
 		return "main/home";
 	}
 }
